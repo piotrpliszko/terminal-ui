@@ -1,3 +1,3 @@
-# typescript-lib-starter
+# Terminal UI
 
-Starter for TypeScript libraries
+Terminal UI component
