@@ -1,12 +1,45 @@
-/**
-* Example styles, to be removed
-* Remember to change file name to something more distinct, for example library name
-*/
+$background-color: #252a33;
+$text-color: #eee;
+$secondary-text-color: #c8c8c8;
+$line-padding: 2px 0 2px 0;
 
-body {
-  padding: 0;
+[data-terminalui] {
+  --prompt: '$ ';
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  background: $background-color;
+  color: $text-color;
+  font-size: 18px;
+  font-family: Menlo, Consolas, Monaco, 'Fira Mono', 'Courier New', Courier,
+    monospace;
+  border-radius: 4px;
+  padding: 55px 35px 35px 35px;
 
-  a {
-    text-decoration: none;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff605c;
+    box-shadow: 20px 0 0 #ffbd44, 40px 0 0 #00ca4e;
+  }
+
+  [data-terminalui-command] {
+    padding: $line-padding;
+
+    &::before {
+      content: var(--prompt);
+    }
+  }
+
+  [data-terminalui-output] {
+    padding: $line-padding;
+    color: $secondary-text-color;
   }
 }

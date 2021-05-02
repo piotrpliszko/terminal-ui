@@ -1,18 +1,22 @@
 {
-  "name": "typescript-lib-starter",
+  "name": "@piopli/terminal-ui",
   "version": "0.1.0",
-  "description": "Starter for TypeScript libraries",
+  "description": "Terminal UI component",
   "author": {
     "name": "Piotr Pliszko",
     "email": "pliszko.piotr@gmail.com",
     "url": "https://blog.pliszko.com/"
   },
+  "private": "true",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/piotrpliszko/typescript-lib-starter",
+  "repository": "https://github.com/piotrpliszko/terminal-ui",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "terminal",
+    "terminal-ui"
+  ],
   "scripts": {
     "dev:watch": "npm run clean && run-p build:ts:watch build:css:watch",
     "prebuild": "npm run clean",
@@ -21,10 +25,10 @@
     "build:ts:main": "tsc -p tsconfig.json",
     "build:ts:module": "tsc -p tsconfig.module.json",
     "build:ts:watch": "npm run build:ts:main -- -w",
-    "build:css": "run-p build:main:css build:module:css",
-    "build:main:css": "node-sass src/ -o build/main/",
-    "build:module:css": "node-sass src/ -o build/module/",
-    "build:css:watch": "npm run build:main:css -- -w",
+    "build:css": "run-p build:css:main build:css:module",
+    "build:css:main": "node-sass src/ -o build/main/",
+    "build:css:module": "node-sass src/ -o build/module/",
+    "build:css:watch": "npm run build:css:main -- -w",
     "clean": "rimraf build",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
@@ -32,6 +36,7 @@
     "prettier:fix": "prettier \"src/**/*.ts\" --write",
     "fix": "run-s lint:fix prettier:fix",
     "test": "jest",
+    "test:watch": "npm run test -- --watch",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && git reset --hard && npm i",
     "prepare-release": "run-s reset-hard test version"
