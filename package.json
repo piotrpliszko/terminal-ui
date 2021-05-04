@@ -7,7 +7,6 @@
     "email": "pliszko.piotr@gmail.com",
     "url": "https://blog.pliszko.com/"
   },
-  "private": "true",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
@@ -43,7 +42,8 @@
     "release-major": "npm run prepare-release && npm run release -- --release-as major",
     "release-minor": "npm run prepare-release && npm run release -- --release-as minor",
     "release-patch": "npm run prepare-release && npm run release -- --release-as patch",
-    "release-prerelease": "npm run prepare-release && npm run release -- --prerelease"
+    "release-prerelease": "npm run prepare-release && npm run release -- --prerelease",
+    "prepublishOnly": "npm run build"
   },
   "engines": {
     "node": ">=14"
