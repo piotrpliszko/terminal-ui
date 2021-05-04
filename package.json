@@ -7,7 +7,6 @@
     "email": "pliszko.piotr@gmail.com",
     "url": "https://blog.pliszko.com/"
   },
-  "private": "true",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
