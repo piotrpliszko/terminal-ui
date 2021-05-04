@@ -1,6 +1,6 @@
 {
   "name": "@piopli/terminal-ui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Terminal UI component",
   "author": {
     "name": "Piotr Pliszko",
@@ -37,9 +37,13 @@
     "fix": "run-s lint:fix prettier:fix",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "version": "standard-version",
     "reset-hard": "git clean -dfx && git reset --hard && npm i",
-    "prepare-release": "run-s reset-hard test version"
+    "prepare-release": "run-s reset-hard test",
+    "release": "standard-version",
+    "release-major": "npm run prepare-release && npm run release -- --release-as major",
+    "release-minor": "npm run prepare-release && npm run release -- --release-as minor",
+    "release-patch": "npm run prepare-release && npm run release -- --release-as patch",
+    "release-prerelease": "npm run prepare-release && npm run release -- --prerelease"
   },
   "engines": {
     "node": ">=14"
