@@ -4,7 +4,8 @@ $secondary-text-color: #c8c8c8;
 $line-padding: 2px 0 2px 0;
 
 [data-terminalui] {
-  --prompt: '$ ';
+  --prompt: '$';
+
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -22,9 +23,9 @@ $line-padding: 2px 0 2px 0;
     position: absolute;
     top: 12px;
     left: 15px;
-    display: inline-block;
     width: 12px;
     height: 12px;
+    display: inline-block;
     border-radius: 50%;
     background: #ff605c;
     box-shadow: 20px 0 0 #ffbd44, 40px 0 0 #00ca4e;
@@ -32,14 +33,17 @@ $line-padding: 2px 0 2px 0;
 
   [data-terminalui-command] {
     padding: $line-padding;
+    white-space: pre-wrap;
 
     &::before {
       content: var(--prompt);
+      margin-right: 10px;
     }
   }
 
   [data-terminalui-output] {
     padding: $line-padding;
     color: $secondary-text-color;
+    white-space: pre-wrap;
   }
 }

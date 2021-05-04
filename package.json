@@ -28,7 +28,7 @@
     "build:css": "run-p build:css:main build:css:module",
     "build:css:main": "node-sass src/ -o build/main/",
     "build:css:module": "node-sass src/ -o build/module/",
-    "build:css:watch": "npm run build:css:main -- -w",
+    "build:css:watch": "npm run build:css:main && npm run build:css:main -- -w",
     "clean": "rimraf build",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
