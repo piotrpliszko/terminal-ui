@@ -1,5 +1,7 @@
 # TerminalUI
 
+![npm version](https://img.shields.io/npm/v/@piopli/terminal-ui) ![license](https://img.shields.io/npm/l/@piopli/terminal-ui)
+
 Simple and lightweight terminal UI component.
 
 ![Screenshot 1](./assets/screenshot-1.png)
