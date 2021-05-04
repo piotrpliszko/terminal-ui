@@ -1,6 +1,6 @@
 # TerminalUI
 
-![npm version](https://img.shields.io/npm/v/@piopli/terminal-ui) ![license](https://img.shields.io/npm/l/@piopli/terminal-ui)
+[![npm version](https://img.shields.io/npm/v/@piopli/terminal-ui)](https://www.npmjs.com/package/@piopli/terminal-ui) [![license](https://img.shields.io/npm/l/@piopli/terminal-ui)](https://github.com/piotrpliszko/terminal-ui/blob/master/LICENSE)
 
 Simple and lightweight terminal UI component.
 
