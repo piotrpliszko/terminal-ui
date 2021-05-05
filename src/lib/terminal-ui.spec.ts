@@ -71,4 +71,17 @@ describe('terminal-ui', () => {
       });
     }).toThrow('No TerminalUI objects found');
   });
+
+  it('should only handle unhandled containers', () => {
+    document.body.innerHTML = doc;
+
+    const firstTerminal = terminalui({
+      selector: '.terminalui-container',
+    });
+
+    const secondTerminal = terminalui();
+
+    expect(firstTerminal.containers.length).toEqual(1);
+    expect(secondTerminal.containers.length).toEqual(1);
+  });
 });
