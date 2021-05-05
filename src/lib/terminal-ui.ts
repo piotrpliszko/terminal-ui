@@ -11,13 +11,19 @@ export const DEFAULT_SELECTOR = '[data-terminalui]';
  */
 export const terminalui = (options?: Options): Terminal => {
   const opts = options || {};
-  const selector = opts.selector || DEFAULT_SELECTOR;
+  const selector = `${
+    opts.selector || DEFAULT_SELECTOR
+  }:not([data-terminaluihandled])`;
 
   const containers = document.querySelectorAll<HTMLElement>(selector);
 
   if (!containers || containers.length === 0) {
     throw new Error('No TerminalUI objects found');
   }
+
+  containers.forEach((container) => {
+    container.dataset.terminaluihandled = 'true';
+  });
 
   const terminal = new Terminal(containers, opts);
 
