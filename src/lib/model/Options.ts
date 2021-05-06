@@ -12,4 +12,9 @@ export interface Options {
    * @default '$ '
    */
   prompt?: string;
+  /**
+   * Specify if instance should throw error or fail silently if no matching containers are found
+   * @default true
+   */
+  failSilently?: boolean;
 }

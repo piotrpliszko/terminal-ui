@@ -2,6 +2,9 @@ import { Terminal } from './Terminal';
 import { Options } from './model/Options';
 
 export const DEFAULT_SELECTOR = '[data-terminalui]';
+const DEFAULT_OPTIONS: Options = {
+  failSilently: true,
+};
 
 /**
  * TerminalUI
@@ -10,14 +13,17 @@ export const DEFAULT_SELECTOR = '[data-terminalui]';
  * @returns terminal instance
  */
 export const terminalui = (options?: Options): Terminal => {
-  const opts = options || {};
+  const opts = {
+    ...DEFAULT_OPTIONS,
+    ...(options || {}),
+  };
   const selector = `${
     opts.selector || DEFAULT_SELECTOR
   }:not([data-terminaluihandled])`;
 
   const containers = document.querySelectorAll<HTMLElement>(selector);
 
-  if (!containers || containers.length === 0) {
+  if (!opts.failSilently && (!containers || containers.length === 0)) {
     throw new Error('No TerminalUI objects found');
   }
 

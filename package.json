@@ -74,5 +74,11 @@
     "CHANGELOG.md",
     "LICENSE",
     "README.md"
-  ]
+  ],
+  "standard-version": {
+    "skip": {
+      "commit": true,
+      "tag": true
+    }
+  }
 }
