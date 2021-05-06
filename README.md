@@ -51,6 +51,7 @@ Available options:
 
 - `selector` - custom selector to handle only selected TerminalUI objects with created instance
 - `prompt` - custom terminal prompt, default: `$`
+- `failSilently` - specify if instance should throw error or fail silently if no matching containers are found, default: `true`
 
 Example configuration:
 
@@ -58,5 +59,6 @@ Example configuration:
 const terminal = terminalui({
   selector: '.custom-terminalui-selector',
   prompt: '>',
+  failSilently: true,
 });
 ```

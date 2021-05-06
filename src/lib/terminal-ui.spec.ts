@@ -62,14 +62,36 @@ describe('terminal-ui', () => {
     expect(terminal.containers.length).toEqual(2);
   });
 
-  it('should throw error when no matching objects are found', () => {
+  it('should not throw error when no matching objects are found when failSilently is default', () => {
     document.body.innerHTML = doc;
 
     expect(() => {
       terminalui({
         selector: '.no-matches',
       });
+    }).not.toThrow('No TerminalUI objects found');
+  });
+
+  it('should throw error when no matching objects are found when failSilently set to false', () => {
+    document.body.innerHTML = doc;
+
+    expect(() => {
+      terminalui({
+        selector: '.no-matches',
+        failSilently: false,
+      });
     }).toThrow('No TerminalUI objects found');
+  });
+
+  it('should not throw error when no matching objects are found when failSilently set to true', () => {
+    document.body.innerHTML = doc;
+
+    expect(() => {
+      terminalui({
+        selector: '.no-matches',
+        failSilently: true,
+      });
+    }).not.toThrow('No TerminalUI objects found');
   });
 
   it('should only handle unhandled containers', () => {

@@ -11,6 +11,10 @@ export class Terminal {
   }
 
   init(): void {
+    if (this.containers.length === 0) {
+      return;
+    }
+
     if (this.options.prompt) {
       applyCustomPrompt(this.containers, this.options.prompt);
     }
