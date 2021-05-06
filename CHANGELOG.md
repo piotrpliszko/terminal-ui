@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 (2021-05-06)
+
+### Features
+
+- fail silently ([#9](https://github.com/piotrpliszko/terminal-ui/issues/9)) ([6797812](https://github.com/piotrpliszko/terminal-ui/commit/67978124330e56721a7ef4ea39e1d77fe1b9b988))
+
 ## 1.1.0 (2021-05-05)
 
 ### Features
